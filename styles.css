@@ -5,3 +5,17 @@ h1 {
 input, select, button {
     margin: 0.5rem 0 0.5rem 0;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+div.table_container { 
+    margin: 1rem auto 1rem auto;
+    padding: 1rem;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
