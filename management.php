@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esercizio 28</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <?php
@@ -25,9 +26,8 @@
         $time = $_POST['time'];
         $notes = $_POST['notes'];
         $parking = $_POST['parking_type'];
-        if(isset($_POST['courses[]'])) {
-            $courses = $_POST['courses[]'];
-            
+        if(!empty($_POST['courses'])) {
+            $courses = $_POST['courses'];
         } else {
             echo "<p> Non puoi fare un'ordinazione vuota! </p> <br> <p> ora prenotazione: $time </p> <br>";
             echo "<a href='index.html' target='_self> torna alla prenotazione</a>";
@@ -53,8 +53,8 @@
     ?> 
     
     <h1 class="my-2">Prenotazione ristorante</h1>
-    <div class="table_container w-50 mx-auto">
-        <table>
+    <div class="table_container w-75 mx-auto">
+        <table class="text-center">
             <tr>
                 <th>Cliente</th>
                 <th>Tavolo N°</th>
@@ -72,9 +72,9 @@
                 <td><?php echo $table  ?>           </td>
                 <td><?php echo $time  ?>            </td>
                 <td><?php echo $parking  ?>         </td>
-                <td><?php echo $courses  ?>         </td>
+                <td><?php echo implode(", ",$courses)  ?>  </td>
                 <td><?php echo $waiter  ?>          </td>
-                <td><?php echo "$act_discount%" ?>  </td>
+                <td><?php echo "".$act_discount * 100 ." %" ?>  </td>
                 <td><?php echo $notes ?>            </td>
                 <td><?php echo "$total €" ?>        </td>
             </tr>

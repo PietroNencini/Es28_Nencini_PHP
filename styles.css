@@ -13,9 +13,21 @@ table {
 
 div.table_container { 
     margin: 1rem auto 1rem auto;
-    padding: 1rem;
 }
 
 table, td, th {
     border: 1px solid black;
+    text-align: center;
+}
+
+td {
+    padding: 1rem
+}
+
+th {
+    padding: 1.5rem
+}
+
+#stocazzo {
+    color:red;
 }
